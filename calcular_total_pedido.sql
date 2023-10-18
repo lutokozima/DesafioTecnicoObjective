@@ -8,12 +8,12 @@ IS
 
 BEGIN
 
-	--o valor total do pedido considerando preço do produto e a quantidade
+    --o valor total do pedido considerando preço do produto e a quantidade
     SELECT SUM(p.quantidade * pr.preco) 
-	  INTO vlr_tot_pedido
+      INTO vlr_tot_pedido
       FROM pedidos p
       JOIN produtos pr 
-	    ON p.id_produto = pr.id
+	ON p.id_produto = pr.id
      WHERE p.id = idPedido;
     
     RETURN vlr_tot_pedido;
