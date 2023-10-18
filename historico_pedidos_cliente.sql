@@ -11,12 +11,12 @@ BEGIN
     OPEN pedidos 
 	FOR
         SELECT p.id, p.data_pedido, p.status_pedido, p.valor_total
-        FROM pedidos p
-        WHERE p.id_cliente = idCliente;
+          FROM pedidos p
+         WHERE p.id_cliente = idCliente;
     
     RETURN pedidos;
     
-    EXCEPTION 
-        WHEN OTHERS THEN 
-            DBMS_OUTPUT.PUT_LINE('Erro: ' || SQLCODE || ' - ' || SQLERRM); 
+EXCEPTION 
+    WHEN OTHERS THEN 
+         DBMS_OUTPUT.PUT_LINE('Erro: ' || SQLCODE || ' - ' || SQLERRM); 
 END;
